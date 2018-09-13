@@ -1,0 +1,42 @@
+@media only screen and (-webkit-device-pixel-ratio: 2) {
+  .border-1px::before {
+    transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-device-pixel-ratio: 3) {
+  .border-1px::before {
+    transform: scaleY(0.333333);
+  }
+}
+.homeFooter {
+  width: 100%;
+  height: 6.533333333333333rem;
+  background: #414141;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 6.533333333333333rem;
+}
+.homeFooter .homeFooterH {
+  width: 90%;
+  height: 1.653333333333333rem;
+  display: flex;
+  justify-content: space-around;
+  line-height: 1.653333333333333rem;
+}
+.homeFooter .homeFooterH a {
+  width: 5.333333333333333rem;
+  font-size: 0.4rem;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 0.4rem;
+}
+.homeFooter .homeFooterT {
+  font-size: 0.4rem;
+  line-height: 1.066666666666667rem;
+  text-align: center;
+  color: #999;
+  display: flex;
+  flex-direction: column;
+}
