@@ -9,6 +9,15 @@ class Personal extends Component {
     loginType:'phone'
   }
   componentDidMount(){
+    console.log(this.props.location.pathname)
+    if(this.props.location.pathname==='/personal/login:2' || this.props.location.pathname==='/personal/login:1'){
+      console.log("1")
+      this.setState({
+        isLogin:true,
+      },()=>{
+        this.showLogin()
+      })
+    }
     this.setState({
       isLogin:false,
       loginType:'phone'
@@ -35,6 +44,7 @@ class Personal extends Component {
 
   render() {
     const {isLogin} = this.state;
+    console.log(isLogin)
     return (
       <section id="personalContainer">
         <div className="headerWraper bottom-border-1px">
