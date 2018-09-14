@@ -63,19 +63,13 @@ class Home extends Component{
       scrollY:false
     })
   }
-  getUlWidth=(parent)=>{
-    let ul = document.querySelector(parent);
-    console.log(ul)
-    let widthUl = (ul.children[0].clientWidth  +20)*(ul.children.length) +'px';
-    console.log(widthUl)
-    ul.style.width= widthUl;
-  }
+
 
   render(){
     const {headCateList,tagList,newItemList,TopicList,cateList} = this.props.info;
-    console.log(TopicList)
+
     const {currentIndex,array} = this.state
-    console.log(newItemList)
+
     return(
       <section id="homeContainer">
         <div className="headerWraper">

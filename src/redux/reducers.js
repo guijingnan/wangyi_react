@@ -13,7 +13,8 @@ import {
   TENFIFTEEN_SUCCESS,
   ZHENTHREEDATA_SUCCESS,
   YXLOOK_SUCCESS,
-  FINDMORE_SUCCESS
+  FINDMORE_SUCCESS,
+  CATEGORYL1LIST_SUCCCESS
 } from './action-types'
 const initData={
   headCateList:[],
@@ -77,7 +78,19 @@ function Knowledge(state=knowData,action) {
       return state
   }
 }
+const initClassify={
+  categoryL1List:[]
+}
+function Classify(state=initClassify,action){
+  switch (action.type){
+    case CATEGORYL1LIST_SUCCCESS:
+      return{...state,categoryL1List:action.data};
+    default:
+      return state
+  }
+}
 export default combineReducers({
   info,
-  Knowledge
+  Knowledge,
+  Classify
 })

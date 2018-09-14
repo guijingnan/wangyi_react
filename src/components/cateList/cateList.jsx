@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import './cateList.styl'
-class cateList extends Component {
-
+class CateList extends Component {
   render() {
     const find = this.props.find;
     return (
@@ -12,4 +11,4 @@ class cateList extends Component {
     )
   }
 }
-export default cateList
+export default CateList

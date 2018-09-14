@@ -21,3 +21,4 @@ Mock.mock('/findMore',{code:0,data:knowledgeData.findMore});
 Mock.mock('/classify',{code:0,data:fenleiData});
 Mock.mock('/shopping',{code:0,data:knowledgeData});
 Mock.mock('/personal',{code:0,data:knowledgeData});
+Mock.mock('/categoryL3List',{code:0,data:fenleiData.categoryL3List})

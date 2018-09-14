@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Route,Switch} from 'react-router-dom'
+import {Route,Switch,Redirect} from 'react-router-dom'
 import './css/reset.css'
 import './main.styl'
 import Home from '../Home/Home'
@@ -9,8 +9,24 @@ import ShoppingCart from '../ShoppingCart/ShoppingCart'
 import Personal  from '../Personal/Personal'
 import FooterGuider from '../../components/FooterGuider/FooterGuider'
 export default class Main extends Component {
-
+  NavList = [
+    {
+      path:'home'
+    },
+    {
+      path:'knowledge'
+    },
+    {
+      path:'classify'
+    },
+    {
+      path:'shoppingcart'
+    },
+  ];
   render() {
+    const navList = this.NavList;
+    const path = this.props.location.pathname;
+    const currentNav = navList.find(nav =>{return nav.path===path.split('/')[1]});
     return (
       <div className="mainWrap">
         <Switch>
@@ -19,8 +35,10 @@ export default class Main extends Component {
           <Route path='/classify' component={Classify}/>
           <Route path='/shoppingcart' component={ShoppingCart}/>
           <Route path='/personal' component={Personal}/>
+          <Redirect to='/home'/>
         </Switch>
-        <FooterGuider/>
+        {currentNav?  <FooterGuider/>: null}
+
       </div>
     )
   }

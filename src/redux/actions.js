@@ -13,7 +13,8 @@ import {
   getTenfifteenData,
   getZhenThreeData,
   getYxLookData,
-  getFindMoreData
+  getFindMoreData,
+  getCategoryL3ListData
 } from '../api'
 import {
   AUTH_SUCCESS,
@@ -29,7 +30,8 @@ import {
   TENFIFTEEN_SUCCESS,
   ZHENTHREEDATA_SUCCESS,
   YXLOOK_SUCCESS,
-  FINDMORE_SUCCESS
+  FINDMORE_SUCCESS,
+  CATEGORYL1LIST_SUCCCESS
 } from './action-types'
 const SuccessData = (msg)=>({type:AUTH_SUCCESS,data:msg});
 const receive_TagList = (tagList) =>({type:TAGLIST_SUCCESS,data:tagList});
@@ -45,12 +47,11 @@ const receive_Tenfifteen = (tenfifteen) =>({type:TENFIFTEEN_SUCCESS,data:tenfift
 const receive_ZhenThree = (ZhenThree) =>({type:ZHENTHREEDATA_SUCCESS,data:ZhenThree});
 const receive_Yxlook = (Yxlook) =>({type:YXLOOK_SUCCESS,data:Yxlook});
 const receive_Findmore = (Findmore) =>({type:FINDMORE_SUCCESS,data:Findmore});
-
+const receive_CategoryL1List = (CategoryL1List) =>({type:CATEGORYL1LIST_SUCCCESS,data:CategoryL1List});
 export function getHome(){
   return async dispatch=>{
     const result = await getheadCateList();
     const headList = result.data;
-    console.log(headList)
     dispatch(SuccessData( headList))
 
   }
@@ -60,7 +61,6 @@ export function getTagList(){
   return async dispatch=>{
     const result = await getTagListData();
     const getTagList = result.data;
-    console.log(getTagList);
     const TagList = getTagList.slice(0,4);
     dispatch(receive_TagList( TagList))
   }
@@ -69,7 +69,6 @@ export function getNewItemList(){
   return async dispatch=>{
     const result = await getNewItemListData();
     const NewItemList = result.data;
-    console.log(NewItemList);
     dispatch(receive_NewItemList(NewItemList))
   }
 }
@@ -77,7 +76,6 @@ export function getTopicList(){
   return async dispatch=>{
     const result = await getTopicListData();
     const TopicList = result.data;
-    console.log(TopicList);
     dispatch(receive_TopicList(TopicList))
   }
 }
@@ -92,7 +90,6 @@ export function getBanner(){
   return async dispatch=>{
     const result = await getBannerData();
     const Banner = result.data;
-    console.log(Banner)
     dispatch(receive_Banner(Banner))
   }
 }
@@ -100,7 +97,6 @@ export function getColumn(){
   return async dispatch=>{
     const result = await getColumnData();
     const Column = result.data;
-    console.log(Column)
     dispatch(receive_Column(Column))
   }
 }
@@ -130,7 +126,6 @@ export function getTenfifteen() {
   return async dispatch=>{
     const result = await getTenfifteenData();
     const Tenfifteen = result.data;
-    console.log(Tenfifteen)
     dispatch(receive_Tenfifteen(Tenfifteen))
   }
 }
@@ -138,7 +133,6 @@ export function getZhenThree() {
   return async dispatch=>{
     const result = await getZhenThreeData();
     const ZhenThree = result.data;
-    console.log(ZhenThree)
     dispatch(receive_ZhenThree (ZhenThree))
   }
 }
@@ -146,7 +140,6 @@ export function getYxlook() {
   return async dispatch=>{
     const result = await getYxLookData();
     const Yxlook = result.data;
-    console.log(Yxlook)
     dispatch(receive_Yxlook(Yxlook))
   }
 }
@@ -154,8 +147,14 @@ export function getFindmore() {
   return async dispatch=>{
     const result = await getFindMoreData();
     const FindMore = result.data;
-    console.log(FindMore)
+
     dispatch(receive_Findmore(FindMore))
   }
 }
-
+export function getCategoryL1List() {
+  return async dispatch=>{
+    const result = await getCategoryL3ListData();
+    const CategoryL3List = result.data;
+    dispatch(receive_CategoryL1List(CategoryL3List))
+  }
+}

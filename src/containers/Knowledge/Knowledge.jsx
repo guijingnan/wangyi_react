@@ -19,6 +19,7 @@ import {getBanner,
 import Swiper from 'swiper'
 import BScroll from 'better-scroll'
 import 'swiper/dist/css/swiper.min.css'
+
 class Knowledge extends Component{
   state={
     titleArr:['为你推荐','十点一刻','严选甄品','严选LOOK'],
@@ -45,7 +46,6 @@ class Knowledge extends Component{
   }
   componentDidUpdate(){
     this._initScroll()
-
   }
   _initScroll=()=>{
     this.bodywraper = new BScroll('.bodywraper',{
@@ -64,7 +64,7 @@ class Knowledge extends Component{
     const {banner,column} = this.props.info;
     const {recommendOne,recommendTwo,recommendThree,Tenfifteen,zhenThree,yanXuan,findMore} = this.props.Knowledge;
     const {titleArr} = this.state;
-   console.log(recommendOne,recommendTwo,recommendThree,Tenfifteen,zhenThree,yanXuan,findMore)
+
 
     return(
       <section id="KnowledgeContainer">
@@ -136,7 +136,7 @@ class Knowledge extends Component{
             <div className="avatar-person" >
               {
                 item.participantAvatar?(item.participantAvatar.map((avatar,index)=>(
-                  avatar?(<img  src={avatar}  />):null
+                  avatar?(<img  src={avatar}  key={index}/>):null
 
                 ))):null
                 }

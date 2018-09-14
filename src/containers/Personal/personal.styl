@@ -1,0 +1,100 @@
+@import "../../assets/stylus/mixins.styl"
+#personalContainer
+  width  100%
+  height 100%
+  overflow hidden
+  background #f4f4f4
+  .headerWraper
+    width 100%
+    height (200/$rem)
+    position fixed
+    top 0
+    left 0
+    z-index 1
+    background #fff
+    .header-search
+      width 100%
+      height (160/$rem)
+      display flex
+      justify-content: space-around
+      line-height (160/$rem)
+      >i
+        font-size (120/$rem)
+      a
+        width 28%
+        height 70%
+        display inline-block
+        margin-top (40/$rem)
+        background-image url('http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-11d65342f9.png')
+        background-size: cover;
+        background-position: center;
+        transform scale(0.8)
+      div
+        height (180/$rem)
+        line-height (180/$rem)
+        display flex
+        justify-content space-between
+        width 20%
+        margin-right -(80/$rem)
+        i
+          font-size (120/$rem)
+
+
+
+  >.bodywraper
+    width 100%
+    height 100%
+    margin-top (220/$rem)
+    &.dis
+      display: none
+    .img-Header
+      width 100%
+      height (820/$rem)
+      text-align center
+      line-height (820/$rem)
+      margin-top (410/$rem)
+      img
+        width (600/$rem)
+        height 30%
+
+    .phoneLogin,.mailLogin
+      width 90%
+      height (180/$rem)
+      border-radius (20/$rem)
+      margin-top (40/$rem)
+      background-color #b4282d
+      margin-left 5%
+      text-align center
+      line-height (180/$rem)
+      span
+        a
+          color #fff
+    .mailLogin
+      background-color transparent
+      border 1px solid #b4282d
+      color #000
+      span
+        a
+          color #000
+    .phoneRegist
+      width 90%
+      height (40/$rem)
+      margin-top (80/$rem)
+      margin-left  5%
+      text-align center
+      font-size (64/$rem)
+
+    .footer
+      width 100%
+      height (80/$rem)
+      display flex
+      padding-left (200/$rem)
+      position absolute
+      bottom (200/$rem)
+      left 0
+      li
+        width 20%
+        height 100%
+        border-right 1px solid #333
+        margin-left (80/$rem)
+

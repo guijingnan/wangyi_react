@@ -18,3 +18,4 @@ export const getTenfifteenData = () =>ajax('/tenfifteen');
 export const getZhenThreeData = () =>ajax('/zhenThree');
 export const getYxLookData = () =>ajax('/yxLook')
 export const getFindMoreData = () => ajax('/findMore')
+export const getCategoryL3ListData = () =>ajax('/categoryL3List');

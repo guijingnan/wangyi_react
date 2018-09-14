@@ -17,14 +17,12 @@ export default function ajax(url = '', data = {}, type = 'GET') {
       }
       // 发送get请求
       promise = axios.get(url)
-      console.log(url,promise)
     } else {
       // 发送post请求
       promise = axios.post(url, data)
     }
 
     promise.then(response => {
-      console.log(response.data)
       resolve(response.data)
     })
       .catch(error => {
