@@ -32,6 +32,15 @@ class Home extends Component{
       this._initScroll()
     this.headerTab.refresh()
   }
+  componentWillUnmount(){
+    if(this.bodywraper || this.foodListsWrap || this.headerTab || this.topic){
+      this.bodywraper.destroy()
+      this.foodListsWrap.destroy()
+      this.headerTab.destroy()
+      this.topic.destroy()
+    }
+
+  }
   handlerTo=(index)=>{
     console.log(index)
     this.setState({
@@ -57,7 +66,7 @@ class Home extends Component{
       scrollX:true,
       scrollY:false
     });
-    new BScroll('.main-topic-body',{
+   this.topic = new BScroll('.main-topic-body',{
       click:true,
       scrollX:true,
       scrollY:false

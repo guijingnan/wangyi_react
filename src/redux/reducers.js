@@ -27,7 +27,6 @@ const initData={
   knowledge:[]
 }
 function info(state=initData,action) {
-  console.log(action)
   switch (action.type){
     case AUTH_SUCCESS:
       return {...state,headCateList:action.data};

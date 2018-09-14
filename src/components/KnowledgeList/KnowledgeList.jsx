@@ -4,9 +4,7 @@ class KnowledgeList extends Component {
 
 
   render() {
-
     const recommendOne= this.props.recommendOne
-console.log(recommendOne)
     return (
       <div className="know-wrap" >
         <div className="img-title">

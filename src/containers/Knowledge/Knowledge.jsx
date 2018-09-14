@@ -6,7 +6,8 @@ import KnowledgeListHeader from '../../components/knowledgeListHeader/knowledgeL
 import KnowledgeFoodItem from '../../components/knowledgeFoodItem/knowledgeFoodItem'
 import CateList from '../../components/cateList/cateList'
 import {connect} from 'react-redux'
-import {getBanner,
+import {
+  getBanner,
   getColumn,
   getRecommendOne,
   getRecommendTwo,
@@ -46,6 +47,13 @@ class Knowledge extends Component{
   }
   componentDidUpdate(){
     this._initScroll()
+  }
+  componentWillUnmount(){
+    if(this.bodywraper || this.foodListsWrap || this.dayWrap){
+      this.bodywraper.destroy()
+      this.foodListsWrap.destroy()
+      this.dayWrap.destroy()
+    }
   }
   _initScroll=()=>{
     this.bodywraper = new BScroll('.bodywraper',{
